@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainAct"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tag1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:forceHasOverlappingRendering="true"
+        android:text="Categories"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/drop_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cate_container"
+            android:layout_below="@+id/tag1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp">
+
+                <Button
+                    android:id="@+id/general_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+
+                    android:padding="10dp"
+                    android:text="general"
+                    app:cornerRadius="30dp"
+                    android:onClick="buttonOnClick"/>
+
+                <Button
+                    android:id="@+id/business_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="10dp"
+                    android:text="Business"
+                    app:cornerRadius="30dp"
+                    android:onClick="buttonOnClick"/>
+
+                <Button
+                    android:id="@+id/entertainment_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:onClick="buttonOnClick"
+                    android:padding="10dp"
+                    android:text="entertainment"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@null"
+                     />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/health_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="Health"
+                    app:cornerRadius="30dp"
+                    android:onClick="buttonOnClick"/>
+
+                <Button
+                    android:id="@+id/science_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="science"
+                    app:cornerRadius="30dp"
+                    android:onClick="buttonOnClick"/>
+
+                <Button
+                    android:id="@+id/sport_btn"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="sports"
+                    app:cornerRadius="30dp"
+                    android:onClick="buttonOnClick"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tag2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cate_container"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="News"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+
+    <FrameLayout
+        android:id="@+id/news_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tag2"
+        >
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerView"
+                />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:shimmer_repeat_mode="restart"
+
+            app:shimmer_shape="linear"
+            android:animateLayoutChanges="true"
+            android:animationCache="true"
+            >
+
+            <!--For shimmer we are creating a same
+                layout but setting its background
+                as a gray colour and not providing
+                any view inside it-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--below we are displaying multiple
+                    shimmer layouts using include
+                    to show them in list format-->
+
+                <include layout="@layout/shimmer_list_item" />
+
+                <include layout="@layout/shimmer_list_item" />
+
+                <include layout="@layout/shimmer_list_item" />
+
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        </FrameLayout>
+
+</RelativeLayout>

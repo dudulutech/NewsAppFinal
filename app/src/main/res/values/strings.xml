@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="set_widget">Set Widget</string>
+    <string name="widget_title">Widget Title</string>
+    <string name="widget_text">Widget Text</string>
+</resources>
